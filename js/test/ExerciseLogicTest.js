@@ -1,8 +1,23 @@
+/**
+ * Classe para realizar Testes unitários, possuíndo 3 métodos
+ * 1- metodo de teste geral do exercício
+ * 2- método de teste de chamada ao endpoint de usuários
+ * 3- método de teste de chamada ao endpoint de posts
+ * 
+ * Todos os métodos retornam a imprimem na tela a resposta esperada e o tempo de execução 
+ * de seus respectivos processos
+ * 
+ */
 class ExerciseLogicTest {
     constructor(){
         this._logic = new ExerciseLogic()
     }
 
+   /**
+   * Método de teste geral do exercício
+   * @returns {String} String HTML para ser exibida em tela com a resposta do exercício e 
+   * o tempo de execução do mesmo
+   */   
     async testExercise(){
         const startTime = new Date()
         var result = await this._logic.doExercise()
@@ -28,6 +43,12 @@ class ExerciseLogicTest {
         return innerHTML
     }
 
+
+   /**
+   * Método de teste de chamada ao endpoint de usuários
+   * @returns {String} String HTML para ser exibida em tela com a resposta da chamada ao
+   * endpoint de usuários e o tempo de execução do mesmo
+   */
     async testUserCall(){
         const startTime = new Date()
         var result = await this._logic.getUsers()
@@ -46,6 +67,12 @@ class ExerciseLogicTest {
         return innerHTML
     }
 
+
+   /**
+   * Método de teste de chamada ao endpoint de posts
+   * @returns {String} String HTML para ser exibida em tela com a resposta da chamada ao
+   * endpoint de posts e o tempo de execução do mesmo
+   */
     async testPostCall(){
         const startTime = new Date()
         var result = await this._logic.getPosts()
