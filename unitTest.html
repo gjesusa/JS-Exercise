@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>JS - Testes Unitários</title>
+
+    <script src="js/http/HttpCaller.js"></script>
+    <script src="js/logic/ExerciseLogic.js"></script>
+    <script src="js/test/ExerciseLogicTest.js"></script>
+    <script>
+      const test = new ExerciseLogicTest()
+      async function doGeneralTest() {
+        var pre = document.getElementById("preResult")
+        let innerHTML = await test.testExercise()        
+        pre.innerHTML = ""
+        pre.innerHTML = innerHTML
+      }
+
+      async function doGeneralTest() {
+        var pre = document.getElementById("preResult")
+        let innerHTML = await test.testExercise()        
+        pre.innerHTML = ""
+        pre.innerHTML = innerHTML
+      }
+
+      async function doUserTest() {
+        var pre = document.getElementById("preResult")
+        let innerHTML = await test.testUserCall()        
+        pre.innerHTML = ""
+        pre.innerHTML = innerHTML
+      }
+
+      async function doPostTest() {
+        var pre = document.getElementById("preResult")
+        let innerHTML = await test.testPostCall()        
+        pre.innerHTML = ""
+        pre.innerHTML = innerHTML
+      }
+
+      async function doClear() {
+        var pre = document.getElementById("preResult")    
+        pre.innerHTML = ""
+      }
+    </script>
+
+</head>
+
+<body>
+  <div> 
+    <h1>Testes Unitários</h1>
+
+    <p>Tela para realizar testes unitários das funções realizadas no Exercício.</p>
+
+    <button onclick="doGeneralTest()">Teste Geral</button>
+    <button onclick="doUserTest()">Teste de chamada de endpoint de Listagem de Usuários</button>
+    <button onclick="doPostTest()">Teste de chamada de endpoint de Listagem de Posts</button>
+    <br/>
+    <br/>
+    <button onclick="doClear()">Limpar Resultado</button>
+    <br/>
+    <br/>
+    <pre id="preResult"></pre>
+  
+  </div>
+</body>
+
+</html>
+

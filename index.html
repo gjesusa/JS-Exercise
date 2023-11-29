@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>JS - Exercício</title>
+    <!--script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script-->
+    <script src="js/http/HttpCaller.js"></script>
+    <script src="js/logic/ExerciseLogic.js"></script>
+    <script>
+      async function doExercise() {
+        var pre = document.getElementById("preUserResult")
+        const logic = new ExerciseLogic()
+        let users = await logic.doExercise()
+        if (users !== "No Users") {
+            pre.innerText = JSON.stringify(users, null, 2)
+        } else {
+            pre.innerText = users
+        }
+      }
+    </script>
+
+</head>
+
+<body>
+  <div> 
+    <h1>Exercício</h1>
+
+    <p>Cria uma função que retorne um array de utilizadores e respectivas publicações sem
+      qualquer dependência de bibliotecas externas (excepto para testes unitários), usando
+      apenas JavaScript.</p>
+
+    <p>O exercício deve ser entregue num repositório Git público à tua escolha.</p>
+
+    <h2>Valorizamos:</h2>
+
+    <ul>
+      <li>Pensamento lógico</li>
+      <li>Código assíncrono</li>
+      <li>Testes unitários</li>
+      <li>Comentários</li>
+      <li>Manipulação de erros</li>
+    </ul>
+
+    <h2>Fonte de dados:</h2>
+
+    <ul>
+      <li><a href="https://jsonplaceholder.typicode.com/users" title="https://jsonplaceholder.typicode.com/users">https://jsonplaceholder.typicode.com/users</a></li>
+      <li><a href="https://jsonplaceholder.typicode.com/posts" title="https://jsonplaceholder.typicode.com/posts">https://jsonplaceholder.typicode.com/posts</a></li>
+    </ul>
+    <br/>
+    <br/>
+
+    <h2>Exemplo da estrutura final pretendida:</h2>
+
+    <pre>
+[
+  {
+    "id": 1,
+    "name": "Leanne Graham",
+    "username": "Bret",
+    "email": "Sincere@april.biz",
+    "address": "Kulas Light, Apt. 556 - 92998-3874 Gwenborough",
+    "phone": "1-770-736-8031 x56442",
+    "website": "hildegard.org",
+    "company": "Romaguera-Crona",
+    "posts": [
+      {
+        "id": 1,
+        "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+        "body": "quia et suscipit\\nsuscipit recusandae consequuntur expedita et cum\\nreprehenderit molestiae ut ut quas totam\\nnostrum rerum est autem suntrem eveniet architecto"
+      }
+    ]
+  }
+]
+    </pre>
+  
+    <button onclick="doExercise()">Rodar Exercício</button>
+    <button type="button" onclick='location.href="unitTest.html"'>Realizar Testes Unitários</button>
+
+    <br/>
+    <br/>
+    <pre id="preUserResult"></pre>
+  
+  </div>
+</body>
+
+</html>
+
